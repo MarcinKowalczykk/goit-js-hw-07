@@ -29,6 +29,12 @@ galleryLinks.forEach(galleryLink => {
     const imageSource = this.href;
     const instance = basicLightbox.create(`<img src="${imageSource}">`);
     instance.show();
+
+    document.addEventListener('keydown', event => {
+      if (event.code === 'Escape') {
+        instance.close();
+      }
+    });
   });
 });
 
